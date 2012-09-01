@@ -1,0 +1,28 @@
+{
+  "name": "dayz_ban_checker",
+  "version": "0.0.1",
+  "description": "Helps maintain a server ban list with the community driven one",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/AidenMontgomery/DayZ-Ban-List-Merger.git"
+  },
+  "keywords": [
+    "DayZ"
+  ],
+  "author": "Aiden Montgomery",
+  "license": "BSD",
+  "dependencies": {
+    "line-reader": "~0.2.2"
+  },
+  "devDependencies": {
+    "mocha":"~1.4.1",
+    "should":"~1.1.0"
+  }
+}
