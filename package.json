@@ -19,6 +19,7 @@
   "author": "Aiden Montgomery",
   "license": "BSD",
   "dependencies": {
+    "optimist":"~0.3.4",
     "line-reader": "~0.2.2"
   },
   "devDependencies": {
