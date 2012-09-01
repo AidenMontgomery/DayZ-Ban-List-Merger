@@ -15,13 +15,16 @@ git clone https://github.com/AidenMontgomery/DayZ-Ban-List-Merger.git
 Usage
 -----
 
-    node ./app.js -l [local] -c [community] [-d | --m [output]]
-    Examples:
-      node ./app.js -l /server/bans.txt -c /community/bans/bans.txt -d
-      node ./app.js -l /server/bans.txt -c /community/bans/bans.txt --m /merged/bans.txt
+	node ./app.js -r <root> -l <local> -c <community> [-d] [-m <output>] [-u] [-U] 
+	Examples:
+		node ./app.js -r ./files/ -l server_bans.txt -c dayz-community-banlist/bans/bans.txt -u -d
+		node ./app.js -r ./files/ -l server_bans.txt -c dayz-community-banlist/bans/bans.txt -m /merged/bans.txt -u 
 
-    Options:
-      -l, --local                     Local or server ban list location      [required]
-      -c, --community                 Community ban list location            [required]
-      --m [output], --merge [output]  Perform a merge and write to [output]
-      -d, --detect                    Output detected duplicate GUIDS  
+	Options:
+	  -r, --rootdir     Root directory for files                               [required]
+	  -l, --local       Local or server ban list path                          [required]
+	  -c, --community   Community ban list path                                [required]
+	  -m, --merge       Perform a merge and write to <output>                
+	  -d, --detect      Output detected duplicate GUIDS                      
+	  -u, --update      Updates the community ban file from the internet     
+	  -U, --update-all  Updates filters as well as ban file from the internet
