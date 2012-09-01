@@ -9,15 +9,23 @@ function banlists(localfile, communityfile){
 		var fileloaded = function(){
 			files--;
 			if (files == 0){
-				callback();
+				callback(null);
 			}
 		}
 		that.localloader.on('end', function(){
 			fileloaded();
 		});
 
+		that.localloader.on('err', function(){
+			callback(err);
+		});
+
 		that.communityloader.on('end', function(){
 			fileloaded();
+		});
+
+		that.communityloader.on('error', function(err){
+			callback(err);
 		});
 
 		that.localloader.load(localfile);
@@ -38,7 +46,7 @@ function banlists(localfile, communityfile){
 			}
 				
 		}
-		callback(duplicates);
+		callback(null, duplicates);
 	}
 
 	this.merge = function(callback){
@@ -59,7 +67,7 @@ function banlists(localfile, communityfile){
 			}
 		}
 
-		callback(merged);
+		callback(null, merged);
 	}
 }
 

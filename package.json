@@ -20,7 +20,10 @@
   "license": "BSD",
   "dependencies": {
     "optimist":"~0.3.4",
-    "line-reader": "~0.2.2"
+    "line-reader": "~0.2.2",
+    "git-wrapper":"~0.1.0",
+    "async":"~0.1.22",
+    "rimraf":"~2.0.2"
   },
   "devDependencies": {
     "mocha":"~1.4.1",

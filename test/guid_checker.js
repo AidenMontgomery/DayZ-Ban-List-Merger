@@ -25,7 +25,7 @@ describe('GUID Checker', function(){
 		checker.localloader = new fake_loader();
 		checker.communityloader = new fake_loader();
 
-		checker.load(function(){
+		checker.load(function(err){
 			checker.localloader.loaded_path.should.equal(path1);
 			checker.communityloader.loaded_path.should.equal(path2);
 			done();
@@ -52,11 +52,11 @@ describe('GUID Checker', function(){
 		checker.communityloader.bans.push(new banentry('testing5'));
 		checker.communityloader.bans.push(new banentry('testing6'));
 
-		checker.load(function(){
+		checker.load(function(err){
 			checker.localloader.loaded_path.should.equal(path1);
 			checker.communityloader.loaded_path.should.equal(path2);
 			
-			checker.detect(function(duplicates){
+			checker.detect(function(err, duplicates){
 				duplicates.should.have.length(4);
 				done();
 			});
@@ -90,7 +90,7 @@ describe('GUID Checker', function(){
 			checker.localloader.loaded_path.should.equal(path1);
 			checker.communityloader.loaded_path.should.equal(path2);
 			
-			checker.merge(function(merged){
+			checker.merge(function(err, merged){
 				merged.should.have.length(10);
 				done();
 			});

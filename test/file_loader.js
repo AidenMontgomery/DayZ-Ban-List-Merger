@@ -7,6 +7,16 @@ describe('File Loader', function(){
 	before(function(){
 		fs.writeFileSync(path, '1234567890 -1 reason\nqwertyuiop\nasdfghjkl');
 	});
+
+	it('Should error if there is no file to load', function(done){
+		var loader = new file_loader();
+		loader.on('error', function(err){
+			err.should.exist;
+			done();
+		})
+
+		loader.load('.......');
+	});
 	
 	it('Should read all lines', function(done){
 		var loader = new file_loader();
