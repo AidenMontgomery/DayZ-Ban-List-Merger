@@ -1,7 +1,11 @@
 DayZ Ban List Merger
 ====================
 
-Merges two ban list together
+Merges two ban list together.
+
+Primarily used to ensure that our server bans are appended to the http://code.google.com/p/dayz-community-banlist/ every time we update.
+
+However this could be used to merge any two ban lists together.
 
 Install
 -------
