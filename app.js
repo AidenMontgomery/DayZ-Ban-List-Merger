@@ -1,5 +1,13 @@
 var argv = require('optimist')
-	.usage('Usage: $0 -l [local] -c [community] -d -m [output]')
+	.usage('Usage:\t$0 -l [local] -c [community] [-d | --m [output]]\nExamples:\n\tnode ./app.js -l /server/bans.txt -c /community/bans/bans.txt -d\n\tnode ./app.js -l /server/bans.txt -c /community/bans/bans.txt --m /merged/bans.txt')
+	.alias('l', 'local')
+	.alias('c', 'community')
+	.alias('d', 'detect')
+	.alias('m [output]', 'merge [output]')
+	.describe('l', 'Local or server ban list location')
+	.describe('c', 'Community ban list location')
+	.describe('m [output]', 'Perform a merge and write to [output]')
+	.describe('d', 'Output detected duplicate GUIDS')
     .demand(['l','c'])
     .argv;
 
