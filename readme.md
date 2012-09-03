@@ -7,6 +7,12 @@ Primarily used to ensure that our server bans are appended to the http://code.go
 
 However this could be used to merge any two ban lists together.
 
+Requirements
+------------
+
+NodeJS is required to run the scripts
+Git is required to get the latest version of the community files
+
 Install
 -------
 
