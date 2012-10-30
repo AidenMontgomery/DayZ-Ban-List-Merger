@@ -16,7 +16,13 @@ Git is required to get the latest version of the community files
 Install
 -------
 
+_Clone the repository_
+
 git clone https://github.com/AidenMontgomery/DayZ-Ban-List-Merger.git
+
+_Install the required modules_
+
+npm install
 
 Usage
 -----
